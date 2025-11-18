@@ -54,18 +54,18 @@ The diagram below illustrates the logic flow within the `app.js` server for each
 
 ```mermaid
 graph TD
-    A[Client sends POST /chat with message and history] --> B{app.js};
-    B --> C[chat() function];
+    A["Client sends POST /chat with message and history"] --> B{app.js};
+    B --> C["chat() function"];
     C --> D{Construct message list with System Prompt};
-    D --> E[Start Iteration Loop (max 5)];
+    D --> E["Start Iteration Loop (max 5)"];
     E --> F{Call Groq API with tools};
     F --> G{Does model want to use a tool?};
     G -- No --> H[Get final text response];
     G -- Yes --> I{Looping?};
     I -- Yes --> J[Force response without tools];
     J --> H;
-    I -- No --> K[Execute Tool (e.g., webSearch)];
-    K --> L{webSearch()};
+    I -- No --> K["Execute Tool (e.g., webSearch)"];
+    K --> L["webSearch()"];
     L --> M{Check Cache for query};
     M -- Hit --> N[Return cached result];
     M -- Miss --> O[Call Tavily Search API];
@@ -105,7 +105,7 @@ sequenceDiagram
     FE->>BE: POST /chat (sends current message + history)
     
     activate BE
-    BE->>BE: Executes `chat()` function (see backend diagram)
+    BE->>BE: Executes "chat()" function (see backend diagram)
     BE-->>FE: Returns JSON { reply: "..." }
     deactivate BE
 
