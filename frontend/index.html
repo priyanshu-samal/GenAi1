@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namkeen AI</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="h-full bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 font-sans">
+
+    <div class="flex flex-col h-full">
+        <!-- Header -->
+        <header class="flex items-center justify-center p-4 border-b border-zinc-200 dark:border-zinc-700">
+            <h1 class="text-xl font-bold">Namkeen</h1>
+        </header>
+
+        <!-- Chat Messages -->
+        <main id="chat-container" class="flex-1 overflow-y-auto p-4 md:p-6">
+            <div id="message-list" class="space-y-6 max-w-4xl mx-auto">
+                <!-- Initial Welcome Message -->
+                <div class="message assistant">
+                    <div class="message-content">
+                        <p>Hello! How can I assist you today?</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <footer class="p-4 md:p-6 border-t border-zinc-200 dark:border-zinc-700">
+            <div class="max-w-4xl mx-auto">
+                <!-- Agent Options -->
+                <div class="flex items-center gap-2 mb-3">
+                    <button class="agent-option active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+                        Standard
+                    </button>
+                    <button class="agent-option">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        Web Search
+                    </button>
+                     <button class="agent-option">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 21.7c.2.2.5.3.8.3h.1c.3 0 .6-.1.8-.3l4.6-4.6c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-3.1 3.1V2.8c0-.6-.4-1-1-1s-1 .4-1 1v16l-3.1-3.1c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4l4.6 4.6z"/></svg>
+                        Deep Research
+                    </button>
+                </div>
+
+                <!-- Message Input Form -->
+                <form id="chat-form" class="relative">
+                    <textarea id="message-input" placeholder="Message Namkeen..." class="w-full p-3 pr-12 rounded-lg bg-zinc-200 dark:bg-zinc-800 border border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none" rows="1"></textarea>
+                    <button type="submit" id="send-button" class="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-md text-zinc-500 hover:text-blue-500 hover:bg-zinc-300 dark:hover:bg-zinc-700 disabled:opacity-50 disabled:hover:bg-transparent">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+                    </button>
+                </form>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

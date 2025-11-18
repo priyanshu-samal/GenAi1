@@ -1,0 +1,76 @@
+/* Use a modern font */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar for a cleaner look */
+#chat-container::-webkit-scrollbar {
+    width: 6px;
+}
+#chat-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+#chat-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid transparent;
+}
+
+/* Chat bubble styling */
+.message {
+    display: flex;
+    max-width: 85%;
+}
+.message-content {
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    line-height: 1.5;
+}
+
+.user {
+    margin-left: auto;
+    justify-content: flex-end;
+}
+.user .message-content {
+    background-color: #3b82f6; /* blue-500 */
+    color: white;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.assistant .message-content {
+    background-color: #e5e7eb; /* gray-200 */
+    color: #111827; /* gray-900 */
+    border-bottom-left-radius: 0.25rem;
+}
+.dark .assistant .message-content {
+    background-color: #374151; /* gray-700 */
+    color: #f9fafb; /* gray-50 */
+}
+
+/* Agent option buttons */
+.agent-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: transparent;
+    color: #6b7280; /* gray-500 */
+    border: 1px solid #d1d5db; /* gray-300 */
+    transition: all 0.2s;
+}
+.dark .agent-option {
+    color: #9ca3af; /* gray-400 */
+    border-color: #4b5563; /* gray-600 */
+}
+.agent-option.active, .agent-option:hover {
+    color: #111827; /* gray-900 */
+    background-color: #f3f4f6; /* gray-100 */
+    border-color: transparent;
+}
+.dark .agent-option.active, .dark .agent-option:hover {
+    color: #f9fafb; /* gray-50 */
+    background-color: #374151; /* gray-700 */
+}
