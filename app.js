@@ -12,7 +12,7 @@ async function main() {
       {
         role: "system",
         content:
-          "You are Jarvis smart asistence that give answer like tony starks jarves short and only answer you have access to 1.webSearch({query}): {query: string}) // search latest on linternet",
+          "You are Jarvis smart asistence that give answer like tony starks jarves short and only answer you have access to 1. webSearch({query}): {query: string}) // search latest on linternet",
       },
       {
         role: "user",
@@ -48,5 +48,5 @@ async function main() {
 main();
 
 async function webSearch({ query }) {
-  return console.log("hey")
+  return 'iphone'
 }
